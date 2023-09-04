@@ -1,0 +1,91 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+}
+ .header  >.logo >a{
+display: flex;
+ }
+ .logo >a >img{
+  width: 89px;
+  height: 89px;
+ }
+
+nav ul{
+  display: flex;
+  list-style-type: none;
+}
+nav ul li{
+  padding: 0 1rem;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.restaurant-list{
+  display: grid;
+  margin: 1.5rem;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.5rem;
+  justify-content: space-between;
+
+}
+.restaurant-list >a >.card{
+  text-decoration: none;
+  width: 300px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+.restaurant-list >a >.card >img{
+  height: 300px;
+  width: 300px;
+  border-radius: 23px;
+}
+
+.footer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  
+}
+.footer ul{
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer ul li{
+  padding: 0 1rem;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
