@@ -6,7 +6,7 @@ const Footer=()=>{
             <li><a href="https://www.github.com/prnjaljaiswal">github</a></li>
             <li><a href="https://wwww.twitter.com/pjpranjal4">twitter</a></li>
         </ul>
-        <p>Copyright &copy; All Right Reserved</p>
+        <p>Developed with <span className="text-red">❤</span>by Pranjal Jaiswal</p>
         </div>
     )
 }
