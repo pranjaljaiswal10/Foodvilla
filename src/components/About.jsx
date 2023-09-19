@@ -1,6 +1,7 @@
 const About=()=>{
     return(
-   <h1>This website is developed by Pranjal Jaiswal</h1>
+   
+   <img src="https://careers.swiggy.com/assets/img/Swiggy-Journey.jpg" width="100%" alt="" />
     )
 }
 export default About;

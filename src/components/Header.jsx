@@ -1,6 +1,12 @@
 import {Link} from "react-router-dom"
-import Search from "./search"
+import Search from "./search";
+import { useAuth } from "../utils/useauth";
+import { useSelector } from "react-redux";
+import {MdFavorite} from "react-icons/md"
+import {AiOutlineShoppingCart} from "react-icons/ai"
 const Header = () => {
+    const {userObject}=useAuth()
+    const cartItems=useSelector(store=>store.foodCart.cart)
     return (
         <div className="header">
             <span className="logo">
@@ -15,9 +21,9 @@ const Header = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/wishlist">Wishlist</Link></li>
-                    <li><Link to="/cart">Cart</Link> </li>
+                    <li>{userObject?<Link to="/profile">Profile</Link>:<Link to="/login">Login</Link>}</li>
+                    <li><Link to="/favourite"><MdFavorite/></Link></li>
+                    <li><Link to="/cart">{cartItems.length}<AiOutlineShoppingCart/></Link> </li>
                 </ul>
             </nav>
         </div>
