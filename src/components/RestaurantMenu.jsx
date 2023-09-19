@@ -8,7 +8,6 @@ import ItemCategory from "./ItemCategory";
 import NestedItemCategory from "./NestedItemCategory";
 import {useNavigate} from "react-router-dom"
 import { removeFromFavourite } from "../utils/favouriteSlice";
-import {HiOutlineCurrencyRupee} from "react-icons/hi"
 
 const RestaurantMenu=()=>{
    const favouriteItems=useSelector(store=>store.favouriteFood.favourite)

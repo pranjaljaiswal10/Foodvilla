@@ -57,8 +57,6 @@ const Cart=()=>{
   <div className="detail"><div className="flex">Delivery fees</div><span>{charges.delivery}</span></div>
   <div className="detail"><div className="flex">G.S.T. and Restaurant Charges </div><span>{totalGst}</span></div>
   
-  
- 
   <hr />
   <div className="detail"><div className="flex">TO PAY</div><span>{Math.round(totalPayment)}</span></div>
   
