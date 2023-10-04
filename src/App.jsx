@@ -4,6 +4,16 @@ import Body from "./components/Body"
 import About from "./components/About"
 import Contact from "./components/Contact"
 import Error from "./components/Error"
+import Cart from "./components/Cart"
+import Favourie from "./components/Favourite"
+import RestaurantMenu from "./components/RestaurantMenu"
+import Login from "./components/Login"
+import Profile from "./components/Profile"
+import PrivateRouter from "./components/PrivateRouter"
+import store from "./utils/appStore";
+import { Provider } from "react-redux"
+import { AuthProvider } from "./utils/useauth";
+import { FilterProvider } from "./utils/useFilter"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 
 
@@ -12,8 +22,14 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 const AppLayout = () => {
   return (
     <>
-      <Header />
+    <AuthProvider>
+      <FilterProvider>
+    <Provider store={store}>
+      <Header/>
       <Outlet/>
+  </Provider>
+  </FilterProvider>
+  </AuthProvider>
       <Footer />
     </>
   )
@@ -35,8 +51,23 @@ const router = createBrowserRouter([
       }, {
         path: "/contact",
         element: <Contact />
+      },{
+       path:"/login",
+       element:<Login/>
+      },{
+        path:"/profile",
+        element:<Profile/>
+      },
+      {
+        path:"/favourite",
+        element: <PrivateRouter> <Favourie/></PrivateRouter>
+      },{
+        path: "/cart",
+        element: <PrivateRouter>  <Cart /></PrivateRouter>
+      },{
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />
       }
-      
     ]
   }
 ])
